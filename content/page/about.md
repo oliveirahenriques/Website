@@ -1,6 +1,6 @@
 ---
-date: "2016-05-05T21:48:51-07:00"
-title: About
+date: "2020-05-05T00:00:00-07:00"
+title: Sobre o autor
 ---
 
-Lorem ipsum dolor sit amet.
+Olá, eu sou o Víctor. Atualmente sou doutorando da Fundação Getúlio Vargas. Sou economista pela Universidade Federal de Viçosa e mestre em Economia Aplicada pela Universidade Federal do Rio Grande do Sul. 
