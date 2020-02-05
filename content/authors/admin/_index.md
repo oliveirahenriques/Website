@@ -28,6 +28,9 @@ social:
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/GeorgeCushen
+- icon: linkedin
+  icon_pack: fab
+  link: https://www.linkedin.com/in/victorhenriquesoliveira/
 - icon: instagram
   icon_pack: fab
   link: https://www.instagram.com/henriquesolivictor/?hl=pt-br
