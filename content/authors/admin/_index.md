@@ -5,44 +5,44 @@ bio: My research interests include distributed robotics, mobile computing and pr
   matter.
 education:
   courses:
-  - course: PhD in Artificial Intelligence
-    institution: Stanford University
-    year: 2012
-  - course: MEng in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2009
-  - course: BSc in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2008
+  - course: Master's Degree in Applied Economics
+    institution: Universidade Federal do Rio Grande do Sul
+    year: 2019
+  - course: Bachelor's Degree in Economics
+    institution: Universidade Federal de Viçosa
+    year: 2016
 email: ""
 interests:
-- Artificial Intelligence
-- Computational Linguistics
-- Information Retrieval
-name: Nelson Bighetti
+- Empirical Finance
+- Financial Econometrics
+- Applied statistics in sports
+name: Víctor Henriques
 organizations:
-- name: Stanford University
-  url: ""
-role: Professor of Artificial Intelligence
+- name: Fundação Getúlio Vargas
+  url: "https://eesp.fgv.br/cursos/pos-graduacao-academica"
+role: Doctoral student in Economics
 social:
 - icon: envelope
   icon_pack: fas
-  link: '#contact'
+  link: '#victorhenriquesoliv@gmail.com'
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/GeorgeCushen
+- icon: instagram
+  icon_pack: fab
+  link: https://www.instagram.com/henriquesolivictor/?hl=pt-br
 - icon: google-scholar
   icon_pack: ai
   link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
 - icon: github
   icon_pack: fab
-  link: https://github.com/gcushen
+  link: https://github.com/oliveirahenriques
 superuser: true
 user_groups:
 - Researchers
 - Visitors
 ---
 
-Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+I am a sports enthias
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+doctoraris a professor of artificial intelligence at Fundação Getúlio Vargas. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
