@@ -29,8 +29,21 @@ date_format = "Jan 2006"
   
   * Economic researcher
   * Regional analysis of external sector
-  * Modelling and projecting scenarios 
+  * Scenario projections   
   """
+
+[[experience]]
+  title = "Teaching Internship"
+  company = "Universidade Federal do Rio Grande do Sul"
+  company_url = "https://www.ufrgs.br/ppge"
+  location = "Porto Alegre"
+  date_start = "2018-03-01"
+  date_end = "2018-07-30"
+  description = """Assitant teacher on Econometrics of Time-Series."""
+
+
+
+
 [[experience]]
   title = "Internship"
   company = "Energisa S/A"
@@ -38,6 +51,6 @@ date_format = "Jan 2006"
   location = "Rio de Janeiro"
   date_start = "2015-06-01"
   date_end = "2016-05-30"
-  description = """Support the analysis of brazilian energy market and projections about consumption."""
+  description = """Analysis of brazilian energy market and assistant on projections about energy consumption."""
 
 +++
