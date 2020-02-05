@@ -11,11 +11,12 @@ education:
   - course: Bachelor's Degree in Economics
     institution: Universidade Federal de Viçosa
     year: 2016
-email: ""
+email: "victorhenriquesoliv@gmail.com"
 interests:
 - Empirical Finance
+- Econometrics
 - Financial Econometrics
-- Applied statistics in sports
+- Sports statistics
 name: Víctor Henriques
 organizations:
 - name: Fundação Getúlio Vargas
@@ -25,18 +26,15 @@ social:
 - icon: envelope
   icon_pack: fas
   link: '#victorhenriquesoliv@gmail.com'
-- icon: twitter
+- icon: youtube
   icon_pack: fab
-  link: https://twitter.com/GeorgeCushen
+  link: https://www.youtube.com/channel/UChtMXL8EISLcdjmm33nsKpw
 - icon: linkedin
   icon_pack: fab
   link: https://www.linkedin.com/in/victorhenriquesoliveira/
 - icon: instagram
   icon_pack: fab
   link: https://www.instagram.com/henriquesolivictor/?hl=pt-br
-- icon: google-scholar
-  icon_pack: ai
-  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
 - icon: github
   icon_pack: fab
   link: https://github.com/oliveirahenriques
