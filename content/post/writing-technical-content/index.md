@@ -5,10 +5,10 @@ image:
   caption: 'Image credit: [**John Moeses Bauan**](https://unsplash.com/photos/OGZtQF8iC0g)'
   placement: 3
 math: true
-title: Writing technical content in Academic
+title: Bayesian Econometrics
 ---
 
-Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest.
+Suppose we have a 
 
 **Highlight your code snippets, take notes on math classes, and draw diagrams from textual representation.**
 
@@ -66,6 +66,7 @@ renders as
 
 $$f(k;p_0^*) = \begin{cases} p_0^* & \text{if }k=1, \\
 1-p_0^* & \text {if }k=0.\end{cases}$$
+
 
 ### Diagrams
 
