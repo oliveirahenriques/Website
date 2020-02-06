@@ -44,15 +44,10 @@ user_groups:
 - Visitors
 ---
 
-Hi, I am Víctor, a guy who shares a great interest on economics and finance. At first glance, one can think it may be difficult to understand the mathematics used on these fields, but I can assure you it is even worse when you spend a great length of time on these matters. I'm not that good in math, nor at statistics, and, quite frankly, sometimes I find myself a little bit lost while studying a given topic. 
+Hi, I am Víctor, a guy who shares a great interest in economics and finance. At first glance, one can think it may be difficult to understand the mathematics used on these fields, although I can assure you it is even worse when you spend a great length of time on these matters. I'm not that good in math, nor at statistics, and, quite frankly, sometimes I find myself a little bit lost while studying a given topic. 
 
-So, why does someone decide to learn such thing? Well, the answer became so much simpler when one can see what he's actually doing when starts to use interactive tools to solve real problems in life. As an undergraduate economics student, I was intrigued by the first time I wrote a regression code on R. I felt so much joy on that day 
+So, why does someone decide to learn such things? Well, the answer becomes so much easier when one can see what he's actually doing while starts to use interactive tools to solve real problems in life. As an undergraduate student, I was intrigued by the first time I wrote a regression code on **R** and, since then, I've learnt a lot about the **R** universe. 
 
-As an Economic Researcher, I've learnt a lot with my colleagues on 
+Somehow, life lead me to work as an Economic Researcher. During those years, I've had some experience doing macro projections for the **Relatório Focus** and **Agência Estado**, and I took what was best to my knowledge to implement **R** on daily work. Nowadays, I've decided to start a Doctoral Program, challenging myself once again.
 
-Since then, I have worked as economic researcher. Working on projections to Relatório Focus, and Agência Estado. 
-
-freshman at Economic Doctoral Program at Fundação Getúlio Vargas. As a freshman, I haven't start my research yet, althought I am pretty sure what would be. My past life has brought some know, My intentions towards this website is fundamentally 
-By the time, I faced a 
-
-Also, I have been spending some time on a personal project together with Ricardo Oscar. The project called "mineirandodados"" aims working with a fun content, such as sports data analysis, gambling, lottery and everything we don't have clue after discussing drinking a few beers.   
+You see, **R** has been a huge part of my professional life so far. In a nutshell, I would like to share my experience all the way through the Doctoral Program, offering for you the best free available content that one can expected. Also, I'd like to spending some time on a personal project together with **Ricardo Oscar**. The project called **mineirandodados** aims working with a fun content, such as sports data analysis, gambling, lottery and everything we don't have clue after a discussion on a bar drinking a few beers.   
