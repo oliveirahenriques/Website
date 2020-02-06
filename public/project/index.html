@@ -44,6 +44,9 @@
 
   
   
+  
+  <script src="/js/mathjax-config.js"></script>
+  
 
   
   
@@ -174,9 +177,9 @@
 
       
       
-        
-      
 
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
       
     
       
@@ -236,7 +239,7 @@
   <meta property="og:description" content="Doctoral student in Economics"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2016-04-27T00:00:00&#43;00:00">
+    <meta property="og:updated_time" content="2020-02-06T00:00:00&#43;00:00">
   
 
   
@@ -511,6 +514,30 @@
     
     
     <div>
+      <h2><a href="/project/economics/bayesian-econometrics/" >Bayesian Econometrics</a></h2>
+      <div class="article-style">
+        
+          First, consider the following example:
+Suppose $X_{1},&hellip;,X_{n}$ is a sequence of random variables independent and identically distributed, where $X_{1} ~ \mbox{Bernoulli}(\theta)$. The probability function $(f.p)$ associated is given by:
+$$ p(x|\theta) = \theta(1-\theta)$$
+Then,
+$$ p(x_{1},&hellip;,x_{n}|\theta) = \Pi_{i=1}^{n}P(x_{i}) = \Pi_{i=1}^{n}\theta^{x_{i}}(1-\theta)^{1-x_{i}} = \theta^{\sum_{i=1}^{n}x_{i}}(1-\theta)^{n-\sum_{i=1}^{n}}$$
+Now, we wanto to infer some
+Model 1
+$$ \begin{cases}x_{i} \end{cases}_{i=1}^{n}$$
+The likelihood is given by
+$$p(x_{1},&hellip;,x_{n}|\theta) = \theta^{\sum_{i=1}^{n}x_{i}}(1-\theta)^{n-\sum_{i=1}^{n}}$$
+Model 2
+Consider the logit model given by
+$$g(\theta_{t}) = log\Big(\frac{\theta_{t}}{1-\theta_{t}}\Big)$$
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
       <h2><a href="/project/brazilian-economics/" >Economics</a></h2>
       <div class="article-style">
         
@@ -524,18 +551,6 @@
     
     <div>
       <h2><a href="/project/economia-brasileira/" >Economics</a></h2>
-      <div class="article-style">
-        
-          An example of using the in-built project page.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/project/economics/" >Economics</a></h2>
       <div class="article-style">
         
           An example of using the in-built project page.
