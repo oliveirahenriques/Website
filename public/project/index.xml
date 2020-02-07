@@ -13,21 +13,40 @@
     </image>
     
     <item>
-      <title>Bayesian Econometrics</title>
-      <link>/project/economics/bayesian-econometrics/</link>
+      <title>Comparing two models for Bernoulli data</title>
+      <link>/project/courses/bayesian-econometrics/comparing-two-models-for-bernoulli-data/</link>
       <pubDate>Thu, 06 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>/project/economics/bayesian-econometrics/</guid>
-      <description>&lt;p&gt;First, consider the following example:&lt;/p&gt;
-&lt;p&gt;Suppose $X_{1},&amp;hellip;,X_{n}$ is a sequence of random variables independent and identically distributed, where $X_{1} ~ \mbox{Bernoulli}(\theta)$. The probability function $(f.p)$ associated is given by:&lt;/p&gt;
-&lt;p&gt;$$ p(x|\theta) = \theta(1-\theta)$$&lt;/p&gt;
-&lt;p&gt;Then,&lt;/p&gt;
+      <guid>/project/courses/bayesian-econometrics/comparing-two-models-for-bernoulli-data/</guid>
+      <description>&lt;p&gt;We are interest in comparing two differt models for a given Bernoulli data. For the sake of our example, let us generate a random sample $x_{i}$ according to our model&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;set.seed(01123581321)
+n &amp;lt;- 50              # the sample length
+x &amp;lt;- rep(0,n)        # vector of zeros
+alpha_t &amp;lt;- 0.0         # the &amp;quot;true&amp;quot; alpha we imagined
+beta_t  &amp;lt;- 1.0          # the &amp;quot;true&amp;quot; beta we imagined
+for (t in 2:n){                 
+  theta_t &amp;lt;- 1/(1+exp(-(alpha_t + beta_t*x[t-1]))) # the transformed version
+  x[t] &amp;lt;- rbinom(1,1,theta_t)
+  x[t] &amp;lt;- rbinom 
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Model 1&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Suppose $X_{1},&amp;hellip;,X_{n}$ is a sequence of random variables independent and identically distributed, where $X_{1} \thicksim \mbox{Bernoulli}(\theta)$. Then, the probability function $(f.p)$ associated is:&lt;/p&gt;
+&lt;p&gt;$$ p(x_{i}|\theta) = \theta(1-\theta) \quad , \ i = 0,1,2,&amp;hellip;,n$$&lt;/p&gt;
+&lt;p&gt;Since the random variables are independents, the likelihood function can be written as:&lt;/p&gt;
 &lt;p&gt;$$ p(x_{1},&amp;hellip;,x_{n}|\theta) = \Pi_{i=1}^{n}P(x_{i}) = \Pi_{i=1}^{n}\theta^{x_{i}}(1-\theta)^{1-x_{i}} = \theta^{\sum_{i=1}^{n}x_{i}}(1-\theta)^{n-\sum_{i=1}^{n}}$$&lt;/p&gt;
-&lt;p&gt;Now, we wanto to infer some&lt;/p&gt;
-&lt;p&gt;Model 1&lt;/p&gt;
-&lt;p&gt;$$ \begin{cases}x_{i} \end{cases}_{i=1}^{n}$$&lt;/p&gt;
-&lt;p&gt;The likelihood is given by&lt;/p&gt;
-&lt;p&gt;$$p(x_{1},&amp;hellip;,x_{n}|\theta) =  \theta^{\sum_{i=1}^{n}x_{i}}(1-\theta)^{n-\sum_{i=1}^{n}}$$&lt;/p&gt;
-&lt;p&gt;Model 2&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;theta_M1 = seq(0,1,length=n) # the parameter theta
+likelihood.M1 = rep(0,M)
+for (i in 1:M)
+likelihood.M1[i] = prod(dbinom(x,1,theta[i]))
+likelihood.M1 = likelihood.M1/max(likelihood.M1)
+
+par(mfrow=c(1,1))
+plot(theta,like.M1,xlab=expression(theta),
+     ylab=&amp;quot;Likelihood&amp;quot;,type=&amp;quot;l&amp;quot;)
+title(&amp;quot;Likelihood for model 1&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Model 2&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Consider the logit model given by&lt;/p&gt;
 &lt;p&gt;$$g(\theta_{t}) = log\Big(\frac{\theta_{t}}{1-\theta_{t}}\Big)$$&lt;/p&gt;
 &lt;p&gt;$$ log\Big(\frac{\theta_{t}}{1-\theta_{t}}\Big) = \alpha + \beta x_{t-1}$$&lt;/p&gt;
@@ -39,27 +58,23 @@
 &lt;p&gt;$$p(x_{1},&amp;hellip;,x_{n}|\theta) =  \theta^{\sum_{i=1}^{n}x_{i}}(1-\theta)^{n-\sum_{i=1}^{n}} \&lt;br&gt;
 = $$&lt;/p&gt;
 &lt;p&gt;For the sake of our example, let us simulate a sample $x_{i}$ according to our model&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;
-set.seed(01123581321)
-n = 50              # the sample length
-x = rep(0,n)        # vector of zeros
-alpha_t = 0.0         # the &amp;quot;true&amp;quot; alpha we imagined
-beta_t  = 1.0          # the &amp;quot;true&amp;quot; beta we imagined
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;set.seed(01123581321)
+n &amp;lt;- 50              # the sample length
+x &amp;lt;- rep(0,n)        # vector of zeros
+alpha_t &amp;lt;- 0.0         # the &amp;quot;true&amp;quot; alpha we imagined
+beta_t  &amp;lt;- 1.0          # the &amp;quot;true&amp;quot; beta we imagined
 for (t in 2:n){                 
-  gamma_t = alpha_t + beta_t*x[t-1]   
-  theta_t = 1/(1+exp(-gamma_t))
-  x[t] = rbinom(1,1,theta_t)
+  theta_t &amp;lt;- 1/(1+exp(-(alpha_t + beta_t*x[t-1]))) # the transformed version
+  x[t] &amp;lt;- rbinom(1,1,theta_t)
+  x[t] &amp;lt;- rbinom 
 }
-plot(x,xlab=&amp;quot;Observation&amp;quot;,ylab=&amp;quot;&amp;quot;)
-title(paste(&amp;quot;Bernoulli trials \n Fraction of 1s=&amp;quot;,mean(x),sep=&amp;quot;&amp;quot;))
 
 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;First, let us define $\alpha = \begin{cases}-2,&amp;hellip;,1\end{cases}$ and  $\beta = \begin{cases}0,&amp;hellip;,3\end{cases}$ an $M \times 1$ vector,&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;
-alpha = seq(-2,1,length=M)     
-beta = seq(0,3,length=M)
-like.M2 = matrix(0,M,M)
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;alpha = seq(-2,1,length=M)    # Vector 
+beta = seq(0,3,length=M)      #
+like.M2 = matrix(0,M,M)       #
 like = rep(0,n-1)
 for (i in 1:M){
   for (j in 1:M){
@@ -71,37 +86,25 @@ for (i in 1:M){
     like.M2[i,j] = prod(like)
   }
 }
-like.M2 = like.M2/max(like.M2)
+like.M2 = like.M2/max(like.M2) # normalizing the likelihood
 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Credits: &lt;a href=&#34;http://hedibert.org&#34;&gt;http://hedibert.org&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Credits: &lt;a href=&#34;http://hedibert.org/wp-content/uploads/2020/01/bernoulli-models-R.txt&#34;&gt;http://hedibert.org/wp-content/uploads/2020/01/bernoulli-models-R.txt&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Economics</title>
-      <link>/project/brazilian-economics/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/project/brazilian-economics/</guid>
-      <description>&lt;p&gt;Economia, economia &amp;hellip;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Economics</title>
-      <link>/project/economia-brasileira/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/project/economia-brasileira/</guid>
-      <description>&lt;p&gt;Economia, economia &amp;hellip;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Economics</title>
-      <link>/project/mineirandodados/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/project/mineirandodados/</guid>
-      <description>&lt;p&gt;Economia, economia &amp;hellip;&lt;/p&gt;
+      <title>The normal-normal distribution</title>
+      <link>/project/courses/bayesian-econometrics/the-normal-normal-distribution/</link>
+      <pubDate>Thu, 06 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/project/courses/bayesian-econometrics/the-normal-normal-distribution/</guid>
+      <description>&lt;p&gt;Suppose for a givena simple linear regression such as,&lt;/p&gt;
+&lt;p&gt;$$ y_{i} = \alpha + \beta x_{i} + \varepsilon_{i} \quad , \ \varepsilon_{i} $$&lt;/p&gt;
+&lt;p&gt;we simple denote $\textbf{y}$ as a $n\times 1$ vector of&lt;/p&gt;
+&lt;p&gt;$$ p(\textbf{y} |\alpha,\beta,\textbf{x}) = \frac{1}{\sqrt{2\pi}}\exp((-\textbf{y} - 1_{n}\alpha -\beta \textbf{x})^{T}(\textbf{y} - 1_{n}\alpha -\beta \textbf{x})/2)$$&lt;/p&gt;
+&lt;p&gt;Now, suppose that we have some knowledge about the distribution of the parameters $\alpha$ and $\beta$&lt;/p&gt;
+&lt;p&gt;$$\begin{eqnarray} P(\alpha,\beta) = P(\alpha)P(\beta) \ 
+\alpha \thicksim \mathrm{N}(0,\tau_{\alpha}^{2}) end{eqnarray}$$&lt;/p&gt;
 </description>
     </item>
     

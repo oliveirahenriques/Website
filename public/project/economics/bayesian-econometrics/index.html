@@ -635,7 +635,7 @@ $$g(\theta_{t}) = log\Big(\frac{\theta_{t}}{1-\theta_{t}}\Big)$$"><meta property
 <p>$$ \begin{cases}x_{i} \end{cases}_{i=1}^{n}$$</p>
 <p>The likelihood is given by</p>
 <p>$$p(x_{1},&hellip;,x_{n}|\theta) =  \theta^{\sum_{i=1}^{n}x_{i}}(1-\theta)^{n-\sum_{i=1}^{n}}$$</p>
-<p>Model 2</p>
+<p><strong>Model 2</strong></p>
 <p>Consider the logit model given by</p>
 <p>$$g(\theta_{t}) = log\Big(\frac{\theta_{t}}{1-\theta_{t}}\Big)$$</p>
 <p>$$ log\Big(\frac{\theta_{t}}{1-\theta_{t}}\Big) = \alpha + \beta x_{t-1}$$</p>
@@ -647,27 +647,23 @@ $$g(\theta_{t}) = log\Big(\frac{\theta_{t}}{1-\theta_{t}}\Big)$$"><meta property
 <p>$$p(x_{1},&hellip;,x_{n}|\theta) =  \theta^{\sum_{i=1}^{n}x_{i}}(1-\theta)^{n-\sum_{i=1}^{n}} \<br>
 = $$</p>
 <p>For the sake of our example, let us simulate a sample $x_{i}$ according to our model</p>
-<pre><code class="language-R">
-set.seed(01123581321)
-n = 50              # the sample length
-x = rep(0,n)        # vector of zeros
-alpha_t = 0.0         # the &quot;true&quot; alpha we imagined
-beta_t  = 1.0          # the &quot;true&quot; beta we imagined
+<pre><code class="language-R">set.seed(01123581321)
+n &lt;- 50              # the sample length
+x &lt;- rep(0,n)        # vector of zeros
+alpha_t &lt;- 0.0         # the &quot;true&quot; alpha we imagined
+beta_t  &lt;- 1.0          # the &quot;true&quot; beta we imagined
 for (t in 2:n){                 
-  gamma_t = alpha_t + beta_t*x[t-1]   
-  theta_t = 1/(1+exp(-gamma_t))
-  x[t] = rbinom(1,1,theta_t)
+  theta_t &lt;- 1/(1+exp(-(alpha_t + beta_t*x[t-1]))) # the transformed version
+  x[t] &lt;- rbinom(1,1,theta_t)
+  x[t] &lt;- rbinom 
 }
-plot(x,xlab=&quot;Observation&quot;,ylab=&quot;&quot;)
-title(paste(&quot;Bernoulli trials \n Fraction of 1s=&quot;,mean(x),sep=&quot;&quot;))
 
 
 </code></pre>
 <p>First, let us define $\alpha = \begin{cases}-2,&hellip;,1\end{cases}$ and  $\beta = \begin{cases}0,&hellip;,3\end{cases}$ an $M \times 1$ vector,</p>
-<pre><code class="language-R">
-alpha = seq(-2,1,length=M)     
-beta = seq(0,3,length=M)
-like.M2 = matrix(0,M,M)
+<pre><code class="language-R">alpha = seq(-2,1,length=M)    # Vector 
+beta = seq(0,3,length=M)      #
+like.M2 = matrix(0,M,M)       #
 like = rep(0,n-1)
 for (i in 1:M){
   for (j in 1:M){
@@ -679,10 +675,10 @@ for (i in 1:M){
     like.M2[i,j] = prod(like)
   }
 }
-like.M2 = like.M2/max(like.M2)
+like.M2 = like.M2/max(like.M2) # normalizing the likelihood
 
 </code></pre>
-<p>Credits: <a href="http://hedibert.org">http://hedibert.org</a></p>
+<p>Credits: <a href="http://hedibert.org/wp-content/uploads/2020/01/bernoulli-models-R.txt">http://hedibert.org/wp-content/uploads/2020/01/bernoulli-models-R.txt</a></p>
 
     </div>
 
