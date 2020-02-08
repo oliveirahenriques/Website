@@ -28,8 +28,8 @@
   
     
   
-  <meta name="description" content="We are interest in comparing two differt models for a given Bernoulli data. For the sake of our example, let us generate a random sample $x_{i}$ according to our model
-set.seed(01123581321)n &lt;- 50 # the sample lengthx &lt;- rep(0,n) # vector of zerosalpha_t &lt;- 0.0 # the &quot;true&quot; alpha we imaginedbeta_t &lt;- 1.0 # the &quot;true&quot; beta we imaginedfor (t in 2:n){ theta_t &lt;- 1/(1&#43;exp(-(alpha_t &#43; beta_t*x[t-1]))) # the transformed versionx[t] &lt;- rbinom(1,1,theta_t)x[t] &lt;- rbinom } Model 1">
+  <meta name="description" content="We are interest in comparing two differt models. For the sake of our example, let us generate a random sample $x_{i} \thicksim \mbox{Bernoulli}(\theta)$
+set.seed(01123581321)n &lt;- 50 # the sample lengthx &lt;- rep(0,n) # vector of zerosalpha_t &lt;- 0.0 # the &quot;true&quot; alpha we imaginedbeta_t &lt;- 1.0 # the &quot;true&quot; beta we imaginedfor (t in 2:n){ theta_t &lt;- 1/(1&#43;exp(-(alpha_t &#43; beta_t*x[t-1]))) # the transformed versionx[t] &lt;- rbinom(1,1,theta_t) } Model 1">
 
   
   <link rel="alternate" hreflang="en-us" href="/project/courses/bayesian-econometrics/comparing-two-models-for-bernoulli-data/">
@@ -234,9 +234,9 @@ set.seed(01123581321)n &lt;- 50 # the sample lengthx &lt;- rep(0,n) # vector o
   
   <meta property="og:site_name" content="Víctor Henriques">
   <meta property="og:url" content="/project/courses/bayesian-econometrics/comparing-two-models-for-bernoulli-data/">
-  <meta property="og:title" content="Comparing two models for Bernoulli data | Víctor Henriques">
-  <meta property="og:description" content="We are interest in comparing two differt models for a given Bernoulli data. For the sake of our example, let us generate a random sample $x_{i}$ according to our model
-set.seed(01123581321)n &lt;- 50 # the sample lengthx &lt;- rep(0,n) # vector of zerosalpha_t &lt;- 0.0 # the &quot;true&quot; alpha we imaginedbeta_t &lt;- 1.0 # the &quot;true&quot; beta we imaginedfor (t in 2:n){ theta_t &lt;- 1/(1&#43;exp(-(alpha_t &#43; beta_t*x[t-1]))) # the transformed versionx[t] &lt;- rbinom(1,1,theta_t)x[t] &lt;- rbinom } Model 1"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:title" content="Comparing two models using Bernoulli data | Víctor Henriques">
+  <meta property="og:description" content="We are interest in comparing two differt models. For the sake of our example, let us generate a random sample $x_{i} \thicksim \mbox{Bernoulli}(\theta)$
+set.seed(01123581321)n &lt;- 50 # the sample lengthx &lt;- rep(0,n) # vector of zerosalpha_t &lt;- 0.0 # the &quot;true&quot; alpha we imaginedbeta_t &lt;- 1.0 # the &quot;true&quot; beta we imaginedfor (t in 2:n){ theta_t &lt;- 1/(1&#43;exp(-(alpha_t &#43; beta_t*x[t-1]))) # the transformed versionx[t] &lt;- rbinom(1,1,theta_t) } Model 1"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
@@ -268,7 +268,7 @@ set.seed(01123581321)n &lt;- 50 # the sample lengthx &lt;- rep(0,n) # vector o
     "@type": "WebPage",
     "@id": "/project/courses/bayesian-econometrics/comparing-two-models-for-bernoulli-data/"
   },
-  "headline": "Comparing two models for Bernoulli data",
+  "headline": "Comparing two models using Bernoulli data",
   
   "datePublished": "2020-02-06T00:00:00Z",
   "dateModified": "2020-02-06T00:00:00Z",
@@ -286,7 +286,7 @@ set.seed(01123581321)n &lt;- 50 # the sample lengthx &lt;- rep(0,n) # vector o
       "url": "img//"
     }
   },
-  "description": "We are interest in comparing two differt models for a given Bernoulli data. For the sake of our example, let us generate a random sample $x_{i}$ according to our model\nset.seed(01123581321)\rn \u0026lt;- 50 # the sample length\rx \u0026lt;- rep(0,n) # vector of zeros\ralpha_t \u0026lt;- 0.0 # the \u0026quot;true\u0026quot; alpha we imagined\rbeta_t \u0026lt;- 1.0 # the \u0026quot;true\u0026quot; beta we imagined\rfor (t in 2:n){ theta_t \u0026lt;- 1/(1+exp(-(alpha_t + beta_t*x[t-1]))) # the transformed version\rx[t] \u0026lt;- rbinom(1,1,theta_t)\rx[t] \u0026lt;- rbinom }\r Model 1"
+  "description": "We are interest in comparing two differt models. For the sake of our example, let us generate a random sample $x_{i} \\thicksim \\mbox{Bernoulli}(\\theta)$\nset.seed(01123581321)\rn \u0026lt;- 50 # the sample length\rx \u0026lt;- rep(0,n) # vector of zeros\ralpha_t \u0026lt;- 0.0 # the \u0026quot;true\u0026quot; alpha we imagined\rbeta_t \u0026lt;- 1.0 # the \u0026quot;true\u0026quot; beta we imagined\rfor (t in 2:n){ theta_t \u0026lt;- 1/(1+exp(-(alpha_t + beta_t*x[t-1]))) # the transformed version\rx[t] \u0026lt;- rbinom(1,1,theta_t) }\r Model 1"
 }
 </script>
 
@@ -304,7 +304,7 @@ set.seed(01123581321)n &lt;- 50 # the sample lengthx &lt;- rep(0,n) # vector o
 
 
 
-  <title>Comparing two models for Bernoulli data | Víctor Henriques</title>
+  <title>Comparing two models using Bernoulli data | Víctor Henriques</title>
 
 </head>
 
@@ -544,7 +544,7 @@ set.seed(01123581321)n &lt;- 50 # the sample lengthx &lt;- rep(0,n) # vector o
   
   
 <div class="article-container pt-3">
-  <h1>Comparing two models for Bernoulli data</h1>
+  <h1>Comparing two models using Bernoulli data</h1>
 
   
 
@@ -603,7 +603,7 @@ set.seed(01123581321)n &lt;- 50 # the sample lengthx &lt;- rep(0,n) # vector o
   <div class="article-container">
 
     <div class="article-style">
-      <p>We are interest in comparing two differt models for a given Bernoulli data. For the sake of our example, let us generate a random sample $x_{i}$ according to our model</p>
+      <p>We are interest in comparing two differt models. For the sake of our example, let us generate a random sample $x_{i} \thicksim \mbox{Bernoulli}(\theta)$</p>
 <pre><code class="language-R">set.seed(01123581321)
 n &lt;- 50              # the sample length
 x &lt;- rep(0,n)        # vector of zeros
@@ -611,71 +611,105 @@ alpha_t &lt;- 0.0         # the &quot;true&quot; alpha we imagined
 beta_t  &lt;- 1.0          # the &quot;true&quot; beta we imagined
 for (t in 2:n){                 
   theta_t &lt;- 1/(1+exp(-(alpha_t + beta_t*x[t-1]))) # the transformed version
-  x[t] &lt;- rbinom(1,1,theta_t)
-  x[t] &lt;- rbinom 
-}
+  x[t] &lt;- rbinom(1,1,theta_t) }
 
 </code></pre>
 <p><strong>Model 1</strong></p>
 <p>Suppose $X_{1},&hellip;,X_{n}$ is a sequence of random variables independent and identically distributed, where $X_{1} \thicksim \mbox{Bernoulli}(\theta)$. Then, the probability function $(f.p)$ associated is:</p>
-<p>$$ p(x_{i}|\theta) = \theta(1-\theta) \quad , \ i = 0,1,2,&hellip;,n$$</p>
+<p>$$ p(x|\theta) = \theta^{x}(1-\theta)^{x-1}$$</p>
 <p>Since the random variables are independents, the likelihood function can be written as:</p>
 <p>$$ p(x_{1},&hellip;,x_{n}|\theta) = \Pi_{i=1}^{n}P(x_{i}) = \Pi_{i=1}^{n}\theta^{x_{i}}(1-\theta)^{1-x_{i}} = \theta^{\sum_{i=1}^{n}x_{i}}(1-\theta)^{n-\sum_{i=1}^{n}}$$</p>
 <pre><code class="language-R">theta_M1 = seq(0,1,length=n) # the parameter theta
-likelihood.M1 = rep(0,M)
-for (i in 1:M)
-likelihood.M1[i] = prod(dbinom(x,1,theta[i]))
-likelihood.M1 = likelihood.M1/max(likelihood.M1)
+likelihood_M1 = rep(0,n)
+for (i in 1:n){
+likelihood_M1[i] = prod(dbinom(x,1,theta_M1[i])) }
+likelihood_M1 = likelihood_M1/max(likelihood_M1)
 
 par(mfrow=c(1,1))
-plot(theta,like.M1,xlab=expression(theta),
+plot(theta_M1,likelihood_M1,xlab=expression(theta),
      ylab=&quot;Likelihood&quot;,type=&quot;l&quot;)
 title(&quot;Likelihood for model 1&quot;)
 </code></pre>
 <p><strong>Model 2</strong></p>
-<p>Consider the logit model given by</p>
-<p>$$g(\theta_{t}) = log\Big(\frac{\theta_{t}}{1-\theta_{t}}\Big)$$</p>
-<p>$$ log\Big(\frac{\theta_{t}}{1-\theta_{t}}\Big) = \alpha + \beta x_{t-1}$$</p>
-<p>Clearly, we don't know the distribution of $g$. Since the function is monotonic and(&hellip;), we can apply the transform:</p>
+<p>Now, consider the logit model given by:</p>
+<p>$$g(\theta_{t}) = \alpha + \beta x_{t-1}$$</p>
+<p>where $g(\theta_{t}) = log\Big(\frac{\theta_{t}}{1-\theta_{t}}\Big)$</p>
+<p>Clearly, we don't know the distribution of $g$. Since the function is monotonic on $\theta &gt; 1$, we can apply the transform:</p>
 <p>$$\begin{eqnarray} \frac{\theta_{t}}{1-\theta_{t}} = e^{\alpha + \beta x_{t-1}} \\\ \frac{\theta_{t}}{\frac{1}{\theta_{t}}-1} = e^{\alpha + \beta x_{t-1}} \\\<br>
 \frac{1}{\theta_{t}} = 1 + e^{\alpha + \beta x_{t-1}} \\\ 
 \theta_{t} = \frac{1}{1+e^{-(\alpha + \beta x_{t-1})}} \end{eqnarray}$$</p>
 <p>The likelihood is given by</p>
 <p>$$p(x_{1},&hellip;,x_{n}|\theta) =  \theta^{\sum_{i=1}^{n}x_{i}}(1-\theta)^{n-\sum_{i=1}^{n}} \<br>
-= $$</p>
-<p>For the sake of our example, let us simulate a sample $x_{i}$ according to our model</p>
-<pre><code class="language-R">set.seed(01123581321)
-n &lt;- 50              # the sample length
-x &lt;- rep(0,n)        # vector of zeros
-alpha_t &lt;- 0.0         # the &quot;true&quot; alpha we imagined
-beta_t  &lt;- 1.0          # the &quot;true&quot; beta we imagined
-for (t in 2:n){                 
-  theta_t &lt;- 1/(1+exp(-(alpha_t + beta_t*x[t-1]))) # the transformed version
-  x[t] &lt;- rbinom(1,1,theta_t)
-  x[t] &lt;- rbinom 
-}
-
-
-</code></pre>
-<p>First, let us define $\alpha = \begin{cases}-2,&hellip;,1\end{cases}$ and  $\beta = \begin{cases}0,&hellip;,3\end{cases}$ an $M \times 1$ vector,</p>
-<pre><code class="language-R">alpha = seq(-2,1,length=M)    # Vector 
-beta = seq(0,3,length=M)      #
-like.M2 = matrix(0,M,M)       #
-like = rep(0,n-1)
-for (i in 1:M){
-  for (j in 1:M){
-    for (t in 2:n){
-      eta = alphas[i]+betas[j]*x[t-1]
-      thetat = 1/(1+exp(-eta))
-      like[t-1] = dbinom(x[t],1,thetat)
+= $$
+First, let us define $\alpha = \begin{cases}-2,&hellip;,1\end{cases}$ and  $\beta = \begin{cases}0,&hellip;,3\end{cases}$ an $M \times 1$ vector,</p>
+<pre><code class="language-R">alpha = seq(-2,1,length=n)          # Vector 
+beta = seq(0,3,length=n)            #
+likelihood_M2 = matrix(0,n,n)       #
+densid = rep(0,n-1)                 
+for (i in 1:n){                         
+  for (j in 1:n){                   
+    for (t in 2:n){                 
+      theta_M2 = 1/(1+exp(-(alpha[i]+beta[j]*x[t-1])))
+      densid[t-1] = dbinom(x[t],1,theta_M2)
     }
-    like.M2[i,j] = prod(like)
+    likelihood_M2[i,j] = prod(densid)
   }
 }
-like.M2 = like.M2/max(like.M2) # normalizing the likelihood
+likelihood_M2 = likelihood_M2/max(likelihood_M2) # normalizing the likelihood
 
+par(mfrow=c(1,2))
+plot(theta_M1,likelihood_M1,xlab=expression(theta),
+     ylab=&quot;Likelihood&quot;,type=&quot;l&quot;)
+title(&quot;Likelihood for model 1&quot;)
+
+contour(alpha,beta,likelihood_M2,xlab=expression(alpha),
+        ylab=expression(beta))
+points(alpha_t,beta_t,pch=16,col=2)
+title(&quot;Likelihood for model 2&quot;)
 </code></pre>
-<p>Credits: <a href="http://hedibert.org/wp-content/uploads/2020/01/bernoulli-models-R.txt">http://hedibert.org/wp-content/uploads/2020/01/bernoulli-models-R.txt</a></p>
+<p>Sometimes, inference based on likelihood makes our lives much more difficult, once we are interested on numeric integration. One explicit way to comput is the aproximation using Monte Carlo Integration.</p>
+<p>More interesting, we are going to use the method known as <strong>Sampling Importance Resampling</strong>, which is much more powerfull in terms of convergence.</p>
+<p>Again</p>
+<pre><code class="language-R">N = 50000                       # size of draws
+theta.draw = runif(N)           # 
+w_M1 = rep(0,N)                    #
+for (i in 1:N){
+  w[i] = prod(dbinom(x,1,theta.draw[i]))} 
+ind = sample(1:N,size=N,replace=TRUE,prob=w)
+theta.draw = theta.draw[ind]
+
+par(mfrow=c(1,2))
+plot(theta,like.M1,xlab=expression(theta),
+     ylab=&quot;Likelihood&quot;,type=&quot;l&quot;)
+title(&quot;Likelihood for model 1&quot;)
+hist(theta.draw,prob=T,xlim=c(0,1),main=&quot;Posterior for model 1&quot;,xlab=expression(theta))
+
+alpha.draw = runif(N,-4,3)
+beta.draw  = runif(N,-2,5)
+w_M2 = rep(0,N)
+like = rep(0,n-1)
+for (i in 1:N){
+  for (t in 2:n){
+    eta = alpha.draw[i]+beta.draw[i]*x[t-1]
+    thetat = 1/(1+exp(-eta))
+    like[t-1] = dbinom(x[t],1,thetat)
+  }
+  w[i] = prod(like)
+}
+ind = sample(1:N,size=N,replace=TRUE,prob=w)
+alpha.draw = alpha.draw[ind]
+beta.draw = beta.draw[ind]
+eta0 = 1/(1+exp(-(alpha.draw)))
+eta1 = 1/(1+exp(-(alpha.draw+beta.draw)))
+
+par(mfrow=c(1,1))
+plot(alpha.draw,beta.draw,xlab=expression(alpha),
+     ylab=expression(beta))
+contour(alphas,betas,like.M2,col=2,add=TRUE,lwd=3,drawlabels=F)
+title(&quot;Likelihood &amp; posterior for model 2&quot;)
+</code></pre>
+<p>This example was extracted from</p>
+<p>Reference: <a href="http://hedibert.org/wp-content/uploads/2020/01/bernoulli-models-R.txt">http://hedibert.org/wp-content/uploads/2020/01/bernoulli-models-R.txt</a></p>
 
     </div>
 
@@ -698,7 +732,7 @@ like.M2 = like.M2/max(like.M2) # normalizing the likelihood
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=/project/courses/bayesian-econometrics/comparing-two-models-for-bernoulli-data/&amp;text=Comparing%20two%20models%20for%20Bernoulli%20data" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=/project/courses/bayesian-econometrics/comparing-two-models-for-bernoulli-data/&amp;text=Comparing%20two%20models%20using%20Bernoulli%20data" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -711,7 +745,7 @@ like.M2 = like.M2/max(like.M2) # normalizing the likelihood
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=/project/courses/bayesian-econometrics/comparing-two-models-for-bernoulli-data/&amp;t=Comparing%20two%20models%20for%20Bernoulli%20data" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=/project/courses/bayesian-econometrics/comparing-two-models-for-bernoulli-data/&amp;t=Comparing%20two%20models%20using%20Bernoulli%20data" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -724,7 +758,7 @@ like.M2 = like.M2/max(like.M2) # normalizing the likelihood
       
       
       <li>
-        <a href="mailto:?subject=Comparing%20two%20models%20for%20Bernoulli%20data&amp;body=/project/courses/bayesian-econometrics/comparing-two-models-for-bernoulli-data/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Comparing%20two%20models%20using%20Bernoulli%20data&amp;body=/project/courses/bayesian-econometrics/comparing-two-models-for-bernoulli-data/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -737,7 +771,7 @@ like.M2 = like.M2/max(like.M2) # normalizing the likelihood
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=/project/courses/bayesian-econometrics/comparing-two-models-for-bernoulli-data/&amp;title=Comparing%20two%20models%20for%20Bernoulli%20data" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=/project/courses/bayesian-econometrics/comparing-two-models-for-bernoulli-data/&amp;title=Comparing%20two%20models%20using%20Bernoulli%20data" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -750,7 +784,7 @@ like.M2 = like.M2/max(like.M2) # normalizing the likelihood
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=Comparing%20two%20models%20for%20Bernoulli%20data%20/project/courses/bayesian-econometrics/comparing-two-models-for-bernoulli-data/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=Comparing%20two%20models%20using%20Bernoulli%20data%20/project/courses/bayesian-econometrics/comparing-two-models-for-bernoulli-data/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -763,7 +797,7 @@ like.M2 = like.M2/max(like.M2) # normalizing the likelihood
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=/project/courses/bayesian-econometrics/comparing-two-models-for-bernoulli-data/&amp;title=Comparing%20two%20models%20for%20Bernoulli%20data" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=/project/courses/bayesian-econometrics/comparing-two-models-for-bernoulli-data/&amp;title=Comparing%20two%20models%20using%20Bernoulli%20data" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>

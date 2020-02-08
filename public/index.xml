@@ -55,11 +55,31 @@
     </item>
     
     <item>
-      <title>Comparing two models for Bernoulli data</title>
+      <title>Comparing three distinct priors for the same model</title>
+      <link>/project/courses/bayesian-econometrics/three-different-priors/</link>
+      <pubDate>Thu, 06 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/project/courses/bayesian-econometrics/three-different-priors/</guid>
+      <description>&lt;p&gt;Suppose $X_{1},&amp;hellip;,X_{n}$ is a sequence of random variables independent and identically distributed, where $X_{1} \thicksim \mbox{Bernoulli}(\theta)$. Then, the probability function $(f.p)$ associated is:&lt;/p&gt;
+&lt;p&gt;$$p(x|\theta) = \theta^{x}(1-\theta)^{x-1}$$&lt;/p&gt;
+&lt;p&gt;Since the random variables are independents, the likelihood function can be written as:&lt;/p&gt;
+&lt;p&gt;$$ p(x_{1},&amp;hellip;,x_{n}|\theta) = \Pi_{i=1}^{n}P(x_{i}) = \Pi_{i=1}^{n}\theta^{x_{i}}(1-\theta)^{1-x_{i}} = \theta^{\sum_{i=1}^{n}x_{i}}(1-\theta)^{n-\sum_{i=1}^{n}}$$&lt;/p&gt;
+&lt;p&gt;Now, suppose we have three difrente&lt;/p&gt;
+&lt;p&gt;$$\theta \thicksim U_{[0,1]} \quad \mbox{where} \quad P(\theta) = 1 \ , \ \theta \in (0,1)$$&lt;/p&gt;
+&lt;p&gt;$$\theta \thicksim Beta(a,b) \quad \mbox{where}  \quad P(\theta) = \frac{\Gamma(a,b)}{\Gamma(a)\Gamma(b)}\theta^{a-1}(1-\theta)^{b-1} \ , \ \theta \in (0,1)$$&lt;/p&gt;
+&lt;p&gt;$$\log{\frac{\theta}{1-\theta}} \thicksim \mathrm{N}(\mu,\sigma^2) \quad \mbox{where}  \quad P(\theta) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\Big(\log{(\frac{\theta}{1-\theta}}-\mu)^2/2\sigma^2\Big)}\frac{1}{\theta(1-\theta)} \ , \ \theta \in (0,1) $$&lt;/p&gt;
+&lt;p&gt;By Bayes rule, we have:&lt;/p&gt;
+&lt;p&gt;$$  $$&lt;/p&gt;
+&lt;p&gt;This example was extracted from&lt;/p&gt;
+&lt;p&gt;Reference: &lt;a href=&#34;http://hedibert.org/wp-content/uploads/2020/01/bernoulli-models-R.txt&#34;&gt;http://hedibert.org/wp-content/uploads/2020/01/bernoulli-models-R.txt&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Comparing two models using Bernoulli data</title>
       <link>/project/courses/bayesian-econometrics/comparing-two-models-for-bernoulli-data/</link>
       <pubDate>Thu, 06 Feb 2020 00:00:00 +0000</pubDate>
       <guid>/project/courses/bayesian-econometrics/comparing-two-models-for-bernoulli-data/</guid>
-      <description>&lt;p&gt;We are interest in comparing two differt models for a given Bernoulli data. For the sake of our example, let us generate a random sample $x_{i}$ according to our model&lt;/p&gt;
+      <description>&lt;p&gt;We are interest in comparing two differt models. For the sake of our example, let us generate a random sample $x_{i} \thicksim \mbox{Bernoulli}(\theta)$&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;set.seed(01123581321)
 n &amp;lt;- 50              # the sample length
 x &amp;lt;- rep(0,n)        # vector of zeros
@@ -67,71 +87,182 @@ alpha_t &amp;lt;- 0.0         # the &amp;quot;true&amp;quot; alpha we imagined
 beta_t  &amp;lt;- 1.0          # the &amp;quot;true&amp;quot; beta we imagined
 for (t in 2:n){                 
   theta_t &amp;lt;- 1/(1+exp(-(alpha_t + beta_t*x[t-1]))) # the transformed version
-  x[t] &amp;lt;- rbinom(1,1,theta_t)
-  x[t] &amp;lt;- rbinom 
-}
+  x[t] &amp;lt;- rbinom(1,1,theta_t) }
 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;Model 1&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Suppose $X_{1},&amp;hellip;,X_{n}$ is a sequence of random variables independent and identically distributed, where $X_{1} \thicksim \mbox{Bernoulli}(\theta)$. Then, the probability function $(f.p)$ associated is:&lt;/p&gt;
-&lt;p&gt;$$ p(x_{i}|\theta) = \theta(1-\theta) \quad , \ i = 0,1,2,&amp;hellip;,n$$&lt;/p&gt;
+&lt;p&gt;$$ p(x|\theta) = \theta^{x}(1-\theta)^{x-1}$$&lt;/p&gt;
 &lt;p&gt;Since the random variables are independents, the likelihood function can be written as:&lt;/p&gt;
 &lt;p&gt;$$ p(x_{1},&amp;hellip;,x_{n}|\theta) = \Pi_{i=1}^{n}P(x_{i}) = \Pi_{i=1}^{n}\theta^{x_{i}}(1-\theta)^{1-x_{i}} = \theta^{\sum_{i=1}^{n}x_{i}}(1-\theta)^{n-\sum_{i=1}^{n}}$$&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;theta_M1 = seq(0,1,length=n) # the parameter theta
-likelihood.M1 = rep(0,M)
-for (i in 1:M)
-likelihood.M1[i] = prod(dbinom(x,1,theta[i]))
-likelihood.M1 = likelihood.M1/max(likelihood.M1)
+likelihood_M1 = rep(0,n)
+for (i in 1:n){
+likelihood_M1[i] = prod(dbinom(x,1,theta_M1[i])) }
+likelihood_M1 = likelihood_M1/max(likelihood_M1)
 
 par(mfrow=c(1,1))
-plot(theta,like.M1,xlab=expression(theta),
+plot(theta_M1,likelihood_M1,xlab=expression(theta),
      ylab=&amp;quot;Likelihood&amp;quot;,type=&amp;quot;l&amp;quot;)
 title(&amp;quot;Likelihood for model 1&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;Model 2&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Consider the logit model given by&lt;/p&gt;
-&lt;p&gt;$$g(\theta_{t}) = log\Big(\frac{\theta_{t}}{1-\theta_{t}}\Big)$$&lt;/p&gt;
-&lt;p&gt;$$ log\Big(\frac{\theta_{t}}{1-\theta_{t}}\Big) = \alpha + \beta x_{t-1}$$&lt;/p&gt;
-&lt;p&gt;Clearly, we don&#39;t know the distribution of $g$. Since the function is monotonic and(&amp;hellip;), we can apply the transform:&lt;/p&gt;
+&lt;p&gt;Now, consider the logit model given by:&lt;/p&gt;
+&lt;p&gt;$$g(\theta_{t}) = \alpha + \beta x_{t-1}$$&lt;/p&gt;
+&lt;p&gt;where $g(\theta_{t}) = log\Big(\frac{\theta_{t}}{1-\theta_{t}}\Big)$&lt;/p&gt;
+&lt;p&gt;Clearly, we don&#39;t know the distribution of $g$. Since the function is monotonic on $\theta &amp;gt; 1$, we can apply the transform:&lt;/p&gt;
 &lt;p&gt;$$\begin{eqnarray} \frac{\theta_{t}}{1-\theta_{t}} = e^{\alpha + \beta x_{t-1}} \\\ \frac{\theta_{t}}{\frac{1}{\theta_{t}}-1} = e^{\alpha + \beta x_{t-1}} \\\&lt;br&gt;
 \frac{1}{\theta_{t}} = 1 + e^{\alpha + \beta x_{t-1}} \\\ 
 \theta_{t} = \frac{1}{1+e^{-(\alpha + \beta x_{t-1})}} \end{eqnarray}$$&lt;/p&gt;
 &lt;p&gt;The likelihood is given by&lt;/p&gt;
 &lt;p&gt;$$p(x_{1},&amp;hellip;,x_{n}|\theta) =  \theta^{\sum_{i=1}^{n}x_{i}}(1-\theta)^{n-\sum_{i=1}^{n}} \&lt;br&gt;
-= $$&lt;/p&gt;
-&lt;p&gt;For the sake of our example, let us simulate a sample $x_{i}$ according to our model&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;set.seed(01123581321)
-n &amp;lt;- 50              # the sample length
-x &amp;lt;- rep(0,n)        # vector of zeros
-alpha_t &amp;lt;- 0.0         # the &amp;quot;true&amp;quot; alpha we imagined
-beta_t  &amp;lt;- 1.0          # the &amp;quot;true&amp;quot; beta we imagined
-for (t in 2:n){                 
-  theta_t &amp;lt;- 1/(1+exp(-(alpha_t + beta_t*x[t-1]))) # the transformed version
-  x[t] &amp;lt;- rbinom(1,1,theta_t)
-  x[t] &amp;lt;- rbinom 
-}
-
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;First, let us define $\alpha = \begin{cases}-2,&amp;hellip;,1\end{cases}$ and  $\beta = \begin{cases}0,&amp;hellip;,3\end{cases}$ an $M \times 1$ vector,&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;alpha = seq(-2,1,length=M)    # Vector 
-beta = seq(0,3,length=M)      #
-like.M2 = matrix(0,M,M)       #
-like = rep(0,n-1)
-for (i in 1:M){
-  for (j in 1:M){
-    for (t in 2:n){
-      eta = alphas[i]+betas[j]*x[t-1]
-      thetat = 1/(1+exp(-eta))
-      like[t-1] = dbinom(x[t],1,thetat)
+= $$
+First, let us define $\alpha = \begin{cases}-2,&amp;hellip;,1\end{cases}$ and  $\beta = \begin{cases}0,&amp;hellip;,3\end{cases}$ an $M \times 1$ vector,&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;alpha = seq(-2,1,length=n)          # Vector 
+beta = seq(0,3,length=n)            #
+likelihood_M2 = matrix(0,n,n)       #
+densid = rep(0,n-1)                 
+for (i in 1:n){                         
+  for (j in 1:n){                   
+    for (t in 2:n){                 
+      theta_M2 = 1/(1+exp(-(alpha[i]+beta[j]*x[t-1])))
+      densid[t-1] = dbinom(x[t],1,theta_M2)
     }
-    like.M2[i,j] = prod(like)
+    likelihood_M2[i,j] = prod(densid)
   }
 }
-like.M2 = like.M2/max(like.M2) # normalizing the likelihood
+likelihood_M2 = likelihood_M2/max(likelihood_M2) # normalizing the likelihood
+
+par(mfrow=c(1,2))
+plot(theta_M1,likelihood_M1,xlab=expression(theta),
+     ylab=&amp;quot;Likelihood&amp;quot;,type=&amp;quot;l&amp;quot;)
+title(&amp;quot;Likelihood for model 1&amp;quot;)
+
+contour(alpha,beta,likelihood_M2,xlab=expression(alpha),
+        ylab=expression(beta))
+points(alpha_t,beta_t,pch=16,col=2)
+title(&amp;quot;Likelihood for model 2&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Sometimes, inference based on likelihood makes our lives much more difficult, once we are interested on numeric integration. One explicit way to comput is the aproximation using Monte Carlo Integration.&lt;/p&gt;
+&lt;p&gt;More interesting, we are going to use the method known as &lt;strong&gt;Sampling Importance Resampling&lt;/strong&gt;, which is much more powerfull in terms of convergence.&lt;/p&gt;
+&lt;p&gt;Again&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;N = 50000                       # size of draws
+theta.draw = runif(N)           # 
+w_M1 = rep(0,N)                    #
+for (i in 1:N){
+  w[i] = prod(dbinom(x,1,theta.draw[i]))} 
+ind = sample(1:N,size=N,replace=TRUE,prob=w)
+theta.draw = theta.draw[ind]
+
+par(mfrow=c(1,2))
+plot(theta,like.M1,xlab=expression(theta),
+     ylab=&amp;quot;Likelihood&amp;quot;,type=&amp;quot;l&amp;quot;)
+title(&amp;quot;Likelihood for model 1&amp;quot;)
+hist(theta.draw,prob=T,xlim=c(0,1),main=&amp;quot;Posterior for model 1&amp;quot;,xlab=expression(theta))
+
+alpha.draw = runif(N,-4,3)
+beta.draw  = runif(N,-2,5)
+w_M2 = rep(0,N)
+like = rep(0,n-1)
+for (i in 1:N){
+  for (t in 2:n){
+    eta = alpha.draw[i]+beta.draw[i]*x[t-1]
+    thetat = 1/(1+exp(-eta))
+    like[t-1] = dbinom(x[t],1,thetat)
+  }
+  w[i] = prod(like)
+}
+ind = sample(1:N,size=N,replace=TRUE,prob=w)
+alpha.draw = alpha.draw[ind]
+beta.draw = beta.draw[ind]
+eta0 = 1/(1+exp(-(alpha.draw)))
+eta1 = 1/(1+exp(-(alpha.draw+beta.draw)))
+
+par(mfrow=c(1,1))
+plot(alpha.draw,beta.draw,xlab=expression(alpha),
+     ylab=expression(beta))
+contour(alphas,betas,like.M2,col=2,add=TRUE,lwd=3,drawlabels=F)
+title(&amp;quot;Likelihood &amp;amp; posterior for model 2&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This example was extracted from&lt;/p&gt;
+&lt;p&gt;Reference: &lt;a href=&#34;http://hedibert.org/wp-content/uploads/2020/01/bernoulli-models-R.txt&#34;&gt;http://hedibert.org/wp-content/uploads/2020/01/bernoulli-models-R.txt&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Metropolis-Hastings Algorithm</title>
+      <link>/project/courses/bayesian-econometrics/metropolis-hastings/</link>
+      <pubDate>Thu, 06 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/project/courses/bayesian-econometrics/metropolis-hastings/</guid>
+      <description>&lt;p&gt;The Metropolis-Hastings Algorithm&lt;/p&gt;
+&lt;p&gt;Given $theta^{i}$, we&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Generate $\theta^{(0)},&amp;hellip;,\theta^{(n)} \ \mbox{where}  \ \theta^{(*)} \thicksim  q(\theta|\theta^{i-1})$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Compute the ratio 
+$$\theta^{i+1} = \begin{array}{ccc} 
+\theta^{(1)} = \theta^{(*)} &amp;amp; , \mbox{with probability} \ \alpha(x^{i},Y_{i}) \&lt;br&gt;
+\theta^{(1)} = \theta^{(0)} &amp;amp; , \ \mbox{with probability} \ 1-\alpha(x^{i},Y_{i})
+\end{array}$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;where $ \alpha(x,y) = \min{1,\frac{P(\theta^{(&lt;em&gt;)})}{q(\theta^{(&lt;/em&gt;)|theta^{}})}}$&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{R}&#34;&gt;########################################################################
+#
+#
+# Our first Metropolis-Hastings algorithm
+#
+# Sampling from a bivariate 2-component mixture of Gaussians
+#
+########################################################################
+
+d2norm = function(theta){
+  0.8*dnorm(theta[1])*dnorm(theta[2])+
+    0.2*dnorm(theta[1],1,0.5)*dnorm(theta[2],1,0.5)
+}
+
+N = 100
+thetas1 = seq(-5,5,length=N)
+thetas2 = seq(-5,5,length=N)
+den = matrix(0,N,N)
+for (i in 1:N)
+  for (j in 1:N)
+    den[i,j] = d2norm(c(thetas1[i],thetas2[j]))
+
+
+par(mfrow=c(3,3))
+M = 10000
+draws = rep(0,M)
+for (sd in c(0.05,0.1,0.5)){
+  contour(thetas1,thetas2,den)
+  theta = c(4,-4)
+  for (i in 1:M){
+    theta.star = rnorm(2,theta,sd)
+    nume=d2norm(theta.star)/prod(dnorm(theta.star,theta,sd))
+    deno=d2norm(theta)/prod(dnorm(theta,theta.star,sd))
+    alpha = min(1,nume/deno)
+    if (runif(1)&amp;lt;alpha){
+      theta = theta.star
+    }
+    draws[i]=theta[1]
+    points(theta[1],theta[2],col=3,pch=16)
+  }
+  contour(thetas1,thetas2,den,add=TRUE,col=2)
+  title(paste(&amp;quot;sd=&amp;quot;,sd,sep=&amp;quot;&amp;quot;))
+  ts.plot(draws)
+  acf(draws)
+}
+
+
+
+
+
+
 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Credits: &lt;a href=&#34;http://hedibert.org/wp-content/uploads/2020/01/bernoulli-models-R.txt&#34;&gt;http://hedibert.org/wp-content/uploads/2020/01/bernoulli-models-R.txt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Reference: &lt;a href=&#34;http://hedibert.org/wp-content/uploads/2020/01/bernoulli-models-R.txt&#34;&gt;http://hedibert.org/wp-content/uploads/2020/01/bernoulli-models-R.txt&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

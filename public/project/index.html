@@ -514,11 +514,47 @@
     
     
     <div>
-      <h2><a href="/project/courses/bayesian-econometrics/comparing-two-models-for-bernoulli-data/" >Comparing two models for Bernoulli data</a></h2>
+      <h2><a href="/project/courses/bayesian-econometrics/three-different-priors/" >Comparing three distinct priors for the same model</a></h2>
       <div class="article-style">
         
-          We are interest in comparing two differt models for a given Bernoulli data. For the sake of our example, let us generate a random sample $x_{i}$ according to our model
-set.seed(01123581321)n &lt;- 50 # the sample lengthx &lt;- rep(0,n) # vector of zerosalpha_t &lt;- 0.0 # the &quot;true&quot; alpha we imaginedbeta_t &lt;- 1.0 # the &quot;true&quot; beta we imaginedfor (t in 2:n){ theta_t &lt;- 1/(1+exp(-(alpha_t + beta_t*x[t-1]))) # the transformed versionx[t] &lt;- rbinom(1,1,theta_t)x[t] &lt;- rbinom } Model 1
+          Suppose $X_{1},&hellip;,X_{n}$ is a sequence of random variables independent and identically distributed, where $X_{1} \thicksim \mbox{Bernoulli}(\theta)$. Then, the probability function $(f.p)$ associated is:
+$$p(x|\theta) = \theta^{x}(1-\theta)^{x-1}$$
+Since the random variables are independents, the likelihood function can be written as:
+$$ p(x_{1},&hellip;,x_{n}|\theta) = \Pi_{i=1}^{n}P(x_{i}) = \Pi_{i=1}^{n}\theta^{x_{i}}(1-\theta)^{1-x_{i}} = \theta^{\sum_{i=1}^{n}x_{i}}(1-\theta)^{n-\sum_{i=1}^{n}}$$
+Now, suppose we have three difrente
+$$\theta \thicksim U_{[0,1]} \quad \mbox{where} \quad P(\theta) = 1 \ , \ \theta \in (0,1)$$
+$$\theta \thicksim Beta(a,b) \quad \mbox{where} \quad P(\theta) = \frac{\Gamma(a,b)}{\Gamma(a)\Gamma(b)}\theta^{a-1}(1-\theta)^{b-1} \ , \ \theta \in (0,1)$$
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
+      <h2><a href="/project/courses/bayesian-econometrics/comparing-two-models-for-bernoulli-data/" >Comparing two models using Bernoulli data</a></h2>
+      <div class="article-style">
+        
+          We are interest in comparing two differt models. For the sake of our example, let us generate a random sample $x_{i} \thicksim \mbox{Bernoulli}(\theta)$
+set.seed(01123581321)n &lt;- 50 # the sample lengthx &lt;- rep(0,n) # vector of zerosalpha_t &lt;- 0.0 # the &quot;true&quot; alpha we imaginedbeta_t &lt;- 1.0 # the &quot;true&quot; beta we imaginedfor (t in 2:n){ theta_t &lt;- 1/(1+exp(-(alpha_t + beta_t*x[t-1]))) # the transformed versionx[t] &lt;- rbinom(1,1,theta_t) } Model 1
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
+      <h2><a href="/project/courses/bayesian-econometrics/metropolis-hastings/" >Metropolis-Hastings Algorithm</a></h2>
+      <div class="article-style">
+        
+          The Metropolis-Hastings Algorithm
+Given $theta^{i}$, we
+  Generate $\theta^{(0)},&hellip;,\theta^{(n)} \ \mbox{where} \ \theta^{(*)} \thicksim q(\theta|\theta^{i-1})$
+  Compute the ratio $$\theta^{i+1} = \begin{array}{ccc} \theta^{(1)} = \theta^{(*)} &amp; , \mbox{with probability} \ \alpha(x^{i},Y_{i}) \
+\theta^{(1)} = \theta^{(0)} &amp; , \ \mbox{with probability} \ 1-\alpha(x^{i},Y_{i}) \end{array}$$
+  where $ \alpha(x,y) = \min{1,\frac{P(\theta^{()})}{q(\theta^{()|theta^{}})}}$
+########################################################################### Our first Metropolis-Hastings algorithm## Sampling from a bivariate 2-component mixture of Gaussians#########################################################################d2norm = function(theta){0.
         
       </div>
     </div>

@@ -14,7 +14,7 @@ abstract: The supply of electricity is a highly important service in the economy
 authors:
 - admin
 - Ricardo de Souza Tavares
-- Luis Tavares
+- Luis Antônio Tavares
 date: "2019-03-01T00:00:00Z"
 doi: ""
 featured: false
