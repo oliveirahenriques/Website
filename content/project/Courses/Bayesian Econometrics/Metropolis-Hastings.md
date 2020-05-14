@@ -26,9 +26,7 @@ where $ \alpha(x,y) = \min{1,\frac{P(\theta^{(*)})}{q(\theta^{(*)|theta^{}})}}$
 
 
 ```{R}
-y=geneq(x[t])
-if (runif(1)<f(y)*q(y,x[t])/(f(x[t])*q(x[t],y))){
-x[t+1]=y}else{x[t+1]=x[t]}
+
 
 ```
 

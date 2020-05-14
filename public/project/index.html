@@ -210,6 +210,14 @@
 
 
   
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','oliveirahenriques');
+</script>
+
 
 
   
@@ -232,6 +240,9 @@
   
   
   <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@henriquesolivic">
+  <meta property="twitter:creator" content="@henriquesolivic">
   
   <meta property="og:site_name" content="Víctor Henriques">
   <meta property="og:url" content="/project/">
@@ -554,7 +565,8 @@ Given $theta^{i}$, we
   Compute the ratio $$\theta^{i+1} = \begin{array}{ccc} \theta^{(1)} = \theta^{(*)} &amp; , \mbox{with probability} \ \alpha(x^{i},Y_{i}) \
 \theta^{(1)} = \theta^{(0)} &amp; , \ \mbox{with probability} \ 1-\alpha(x^{i},Y_{i}) \end{array}$$
   where $ \alpha(x,y) = \min{1,\frac{P(\theta^{()})}{q(\theta^{()|theta^{}})}}$
-########################################################################### Our first Metropolis-Hastings algorithm## Sampling from a bivariate 2-component mixture of Gaussians#########################################################################d2norm = function(theta){0.
+ Now, suppose we are sampling from a bivariate 2-component mixture of Gaussians
+d2norm = function(theta){0.8*dnorm(theta[1])*dnorm(theta[2])+0.2*dnorm(theta[1],1,0.5)*dnorm(theta[2],1,0.5)}N = 100thetas1 = seq(-5,5,length=N)thetas2 = seq(-5,5,length=N)den = matrix(0,N,N)for (i in 1:N)for (j in 1:N)den[i,j] = d2norm(c(thetas1[i],thetas2[j]))par(mfrow=c(3,3))M = 10000draws = rep(0,M)for (sd in c(0.
         
       </div>
     </div>

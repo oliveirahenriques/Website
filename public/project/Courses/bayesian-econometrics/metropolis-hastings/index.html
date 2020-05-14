@@ -34,7 +34,8 @@ Given $theta^{i}$, we
   Compute the ratio $$\theta^{i&#43;1} = \begin{array}{ccc} \theta^{(1)} = \theta^{(*)} &amp; , \mbox{with probability} \ \alpha(x^{i},Y_{i}) \
 \theta^{(1)} = \theta^{(0)} &amp; , \ \mbox{with probability} \ 1-\alpha(x^{i},Y_{i}) \end{array}$$
   where $ \alpha(x,y) = \min{1,\frac{P(\theta^{()})}{q(\theta^{()|theta^{}})}}$
-########################################################################### Our first Metropolis-Hastings algorithm## Sampling from a bivariate 2-component mixture of Gaussians#########################################################################d2norm = function(theta){0.">
+ Now, suppose we are sampling from a bivariate 2-component mixture of Gaussians
+d2norm = function(theta){0.8*dnorm(theta[1])*dnorm(theta[2])&#43;0.2*dnorm(theta[1],1,0.5)*dnorm(theta[2],1,0.5)}N = 100thetas1 = seq(-5,5,length=N)thetas2 = seq(-5,5,length=N)den = matrix(0,N,N)for (i in 1:N)for (j in 1:N)den[i,j] = d2norm(c(thetas1[i],thetas2[j]))par(mfrow=c(3,3))M = 10000draws = rep(0,M)for (sd in c(0.">
 
   
   <link rel="alternate" hreflang="en-us" href="/project/courses/bayesian-econometrics/metropolis-hastings/">
@@ -216,6 +217,14 @@ Given $theta^{i}$, we
 
 
   
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','oliveirahenriques');
+</script>
+
 
 
   
@@ -237,6 +246,9 @@ Given $theta^{i}$, we
   
   <meta property="twitter:card" content="summary">
   
+  <meta property="twitter:site" content="@henriquesolivic">
+  <meta property="twitter:creator" content="@henriquesolivic">
+  
   <meta property="og:site_name" content="Víctor Henriques">
   <meta property="og:url" content="/project/courses/bayesian-econometrics/metropolis-hastings/">
   <meta property="og:title" content="Metropolis-Hastings Algorithm | Víctor Henriques">
@@ -246,7 +258,8 @@ Given $theta^{i}$, we
   Compute the ratio $$\theta^{i&#43;1} = \begin{array}{ccc} \theta^{(1)} = \theta^{(*)} &amp; , \mbox{with probability} \ \alpha(x^{i},Y_{i}) \
 \theta^{(1)} = \theta^{(0)} &amp; , \ \mbox{with probability} \ 1-\alpha(x^{i},Y_{i}) \end{array}$$
   where $ \alpha(x,y) = \min{1,\frac{P(\theta^{()})}{q(\theta^{()|theta^{}})}}$
-########################################################################### Our first Metropolis-Hastings algorithm## Sampling from a bivariate 2-component mixture of Gaussians#########################################################################d2norm = function(theta){0."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+ Now, suppose we are sampling from a bivariate 2-component mixture of Gaussians
+d2norm = function(theta){0.8*dnorm(theta[1])*dnorm(theta[2])&#43;0.2*dnorm(theta[1],1,0.5)*dnorm(theta[2],1,0.5)}N = 100thetas1 = seq(-5,5,length=N)thetas2 = seq(-5,5,length=N)den = matrix(0,N,N)for (i in 1:N)for (j in 1:N)den[i,j] = d2norm(c(thetas1[i],thetas2[j]))par(mfrow=c(3,3))M = 10000draws = rep(0,M)for (sd in c(0."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
@@ -296,7 +309,7 @@ Given $theta^{i}$, we
       "url": "img//"
     }
   },
-  "description": "The Metropolis-Hastings Algorithm\nGiven $theta^{i}$, we\n  Generate $\\theta^{(0)},\u0026hellip;,\\theta^{(n)} \\ \\mbox{where} \\ \\theta^{(*)} \\thicksim q(\\theta|\\theta^{i-1})$\n  Compute the ratio $$\\theta^{i+1} = \\begin{array}{ccc} \\theta^{(1)} = \\theta^{(*)} \u0026amp; , \\mbox{with probability} \\ \\alpha(x^{i},Y_{i}) \\\n\\theta^{(1)} = \\theta^{(0)} \u0026amp; , \\ \\mbox{with probability} \\ 1-\\alpha(x^{i},Y_{i}) \\end{array}$$\n  where $ \\alpha(x,y) = \\min{1,\\frac{P(\\theta^{()})}{q(\\theta^{()|theta^{}})}}$\n########################################################################\r#\r#\r# Our first Metropolis-Hastings algorithm\r#\r# Sampling from a bivariate 2-component mixture of Gaussians\r#\r########################################################################\rd2norm = function(theta){\r0."
+  "description": "The Metropolis-Hastings Algorithm\nGiven $theta^{i}$, we\n  Generate $\\theta^{(0)},\u0026hellip;,\\theta^{(n)} \\ \\mbox{where} \\ \\theta^{(*)} \\thicksim q(\\theta|\\theta^{i-1})$\n  Compute the ratio $$\\theta^{i+1} = \\begin{array}{ccc} \\theta^{(1)} = \\theta^{(*)} \u0026amp; , \\mbox{with probability} \\ \\alpha(x^{i},Y_{i}) \\\n\\theta^{(1)} = \\theta^{(0)} \u0026amp; , \\ \\mbox{with probability} \\ 1-\\alpha(x^{i},Y_{i}) \\end{array}$$\n  where $ \\alpha(x,y) = \\min{1,\\frac{P(\\theta^{()})}{q(\\theta^{()|theta^{}})}}$\n Now, suppose we are sampling from a bivariate 2-component mixture of Gaussians\nd2norm = function(theta){\r0.8*dnorm(theta[1])*dnorm(theta[2])+\r0.2*dnorm(theta[1],1,0.5)*dnorm(theta[2],1,0.5)\r}\rN = 100\rthetas1 = seq(-5,5,length=N)\rthetas2 = seq(-5,5,length=N)\rden = matrix(0,N,N)\rfor (i in 1:N)\rfor (j in 1:N)\rden[i,j] = d2norm(c(thetas1[i],thetas2[j]))\rpar(mfrow=c(3,3))\rM = 10000\rdraws = rep(0,M)\rfor (sd in c(0."
 }
 </script>
 
@@ -628,16 +641,11 @@ $$\theta^{i+1} = \begin{array}{ccc}
 </li>
 </ol>
 <p>where $ \alpha(x,y) = \min{1,\frac{P(\theta^{(<em>)})}{q(\theta^{(</em>)|theta^{}})}}$</p>
-<pre><code class="language-{R}">########################################################################
-#
-#
-# Our first Metropolis-Hastings algorithm
-#
-# Sampling from a bivariate 2-component mixture of Gaussians
-#
-########################################################################
+<pre><code class="language-{R}">
 
-d2norm = function(theta){
+</code></pre>
+<p>Now, suppose we are sampling from a bivariate 2-component mixture of Gaussians</p>
+<pre><code class="language-{R}">d2norm = function(theta){
   0.8*dnorm(theta[1])*dnorm(theta[2])+
     0.2*dnorm(theta[1],1,0.5)*dnorm(theta[2],1,0.5)
 }
@@ -673,13 +681,6 @@ for (sd in c(0.05,0.1,0.5)){
   ts.plot(draws)
   acf(draws)
 }
-
-
-
-
-
-
-
 </code></pre>
 <p>Reference: <a href="http://hedibert.org/wp-content/uploads/2020/01/bernoulli-models-R.txt">http://hedibert.org/wp-content/uploads/2020/01/bernoulli-models-R.txt</a></p>
 
@@ -906,6 +907,15 @@ for (sd in c(0.05,0.1,0.5)){
 
 
 
+
+<section id="comments">
+  
+    <div id="commento"></div>
+
+<script src="https://cdn.commento.io/js/commento.js" defer></script>
+
+  
+</section>
 
 
 

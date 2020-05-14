@@ -105,7 +105,7 @@ phone = "+55 51 980393013"
 # Contact links
 #   Set to `[]` to disable, or comment out unwanted lines with a hash `#`.
 contact_links = [
-  #{icon = "twitter", icon_pack = "fab", name = "DM Me", link = "https://twitter.com/Twitter"},
+  {icon = "twitter", icon_pack = "fab", name = "DM Me", link = "https://twitter.com/henriquesolivic"},
   #{icon = "skype", icon_pack = "fab", name = "Skype Me", link = "skype:echo123?call"},
   #{icon = "keybase", icon_pack = "fab", name = "Chat on Keybase", link = "https://keybase.io/"},
   #{icon = "comments", icon_pack = "fas", name = "Discuss on Forum", link = "https://discourse.gohugo.io"},
@@ -120,7 +120,7 @@ contact_links = [
 sharing_image = ""
 
 # Twitter username (without @). Used when a visitor shares your site on Twitter.
-twitter = ""
+twitter = "henriquesolivic"
 
 ############################
 ## Regional Settings
@@ -205,7 +205,7 @@ plugins_js  = []
   #   0: Disabled
   #   1: Disqus (https://disqus.com)
   #   2: Commento (https://commento.io)
-  engine = 0
+  engine = 2
 
   # Which page types are commentable?
   commentable = {page = true, post = true, docs = true, project = true, publication = true, talk = true}
@@ -264,5 +264,5 @@ plugins_js  = []
 ## Marketing
 ############################
 [marketing]
-  google_analytics = ""
-  google_tag_manager = ""
+  google_analytics = "oliveirahenriques"
+  google_tag_manager = "oliveirahenriques"

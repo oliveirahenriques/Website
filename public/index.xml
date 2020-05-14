@@ -209,16 +209,11 @@ $$\theta^{i+1} = \begin{array}{ccc}
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;where $ \alpha(x,y) = \min{1,\frac{P(\theta^{(&lt;em&gt;)})}{q(\theta^{(&lt;/em&gt;)|theta^{}})}}$&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{R}&#34;&gt;########################################################################
-#
-#
-# Our first Metropolis-Hastings algorithm
-#
-# Sampling from a bivariate 2-component mixture of Gaussians
-#
-########################################################################
+&lt;pre&gt;&lt;code class=&#34;language-{R}&#34;&gt;
 
-d2norm = function(theta){
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, suppose we are sampling from a bivariate 2-component mixture of Gaussians&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{R}&#34;&gt;d2norm = function(theta){
   0.8*dnorm(theta[1])*dnorm(theta[2])+
     0.2*dnorm(theta[1],1,0.5)*dnorm(theta[2],1,0.5)
 }
@@ -254,13 +249,6 @@ for (sd in c(0.05,0.1,0.5)){
   ts.plot(draws)
   acf(draws)
 }
-
-
-
-
-
-
-
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Reference: &lt;a href=&#34;http://hedibert.org/wp-content/uploads/2020/01/bernoulli-models-R.txt&#34;&gt;http://hedibert.org/wp-content/uploads/2020/01/bernoulli-models-R.txt&lt;/a&gt;&lt;/p&gt;
 </description>
