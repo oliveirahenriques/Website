@@ -39,7 +39,7 @@ date_format = "Jan 2006"
   location = "Porto Alegre"
   date_start = "2018-03-01"
   date_end = "2018-07-30"
-  description = """Assistant teacher on Econometrics of Time-Series."""
+  description = """Assistant Professor on Econometrics of Time-Series."""
 
 
 
